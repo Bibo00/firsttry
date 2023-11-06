@@ -1,0 +1,22 @@
+ $j = 0;
+            for($i = 0; $i < $nEsercizi; $i++){
+                $sql = "SELECT * FROM " . $musc . " WHERE id = " . $ids[$j];
+                $result = $conn -> query($sql);
+                if($result -> num_rows > 0){
+                    $row = $result -> fetch_assoc();
+                    $j++;
+                    $duplicato = false;
+                    $_SESSION['id'][$i] = $row["id"];
+                    $_SESSION['es'][$musc][$i] = $row['esercizi'];
+                    $_SESSION['rep'][$musc][$i] = $row['serie'];
+                    if($valori[$musc]['coefficiente'] >= 20){
+                        if($val >= 20 && $row['esercizi_secondari']){
+                            $i++;
+                            $_SESSION['es'][$musc][$i] = $row['esercizi_secondari'];
+                            $_SESSION['rep'][$musc][$i] = $row['rep_es_sec'];
+                        }
+                    }        
+                } else {
+                    echo 'connessione non riuscita';
+                }
+            } 

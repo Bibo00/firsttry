@@ -1,0 +1,165 @@
+.logspace{
+    display: none;
+    position: relative;
+    justify-content: center;
+    width: 100vw;
+    height: fit-content;
+    top: -80px;
+    left: 0;
+}
+
+.wrapper{
+    position: relative;
+    background: transparent;
+    border: 7px solid white;
+    width: 280px;
+    height: 380px;
+    border-radius: 20px;
+    backdrop-filter: blur(500px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login{
+    width: 100%;
+}
+
+.form-box h2{
+    position: relative;
+    font-size: 2.1em;
+    font-family: 'Poppins', sans-serif;
+    top: -10px;
+    color:white;
+    text-align: center;
+}
+
+.mail-icon, .pass-icon{
+    position: relative;
+    align-self: flex-end;
+    left: -18px;
+    top: 2px;
+}
+
+.inputcred{
+    position: relative;
+    display: flex;
+    width: 210px;
+    margin: 30px;
+    border-bottom: 2px solid black;
+}
+
+.inputcred input{
+    position: relative;
+    top: -2px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    left: -15px;
+}
+
+.checkbox{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+    width: 100%;
+    top: 235px;
+    left: 10px;
+}
+
+.checkstyle input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkstyle{
+    position: relative;
+    width: 20px;
+    height: 10px;
+    z-index: 99;
+}    
+
+.switch{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.switch::before{
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: -1px;
+  bottom: -1px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .switch{
+    background-color: #2196F3;
+}
+
+input:checked + .switch:before {
+    transform: translateX(10px);
+}
+
+.check-text{
+    position: relative;
+}
+
+.logbtn{
+    left: 180px;
+    top: -20px;
+}
+
+.logbtn, .regbtn{
+    position: relative;
+    
+    padding: 5px 12px;
+    border: 4px solid white;
+    border-radius: 16px;
+    background-color: rgb(0, 140, 255);
+    font-size: 0.9em;
+    color: white;
+}
+
+.regbtn{
+    left: 165px;
+    top: -10px;
+}
+
+.register p{
+    font-size: 0.9em;
+}
+
+.register{
+    position: relative;
+    text-align: center;
+    top: 10px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: none;
+  -webkit-box-shadow: none;
+  transition: background-color 5000s ease-in-out 0s;
+}

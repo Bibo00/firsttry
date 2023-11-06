@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+.porcodio{
+    position: relative;
+    margin-top: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    justify-self: center;
+}
+.centerLogo{
+    text-align: center;
+    
+}
+.centerLogo *{
+    position: relative;
+    color: white;
+    font-family: 'Tilt Neon', sans-serif;
+    margin-top: -10px;
+}
+.centerLogo h1{
+    font-size: 7em;
+}
+.centerLogo h4{
+    font-size: 5em;
+}
+.centerLogo h2{
+    font-size: 5.5em;
+}
+.createBtn{
+    margin-top: 10px;
+    border: 7px solid white;
+    padding: 16px 40px;
+    background-color: transparent;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 2em;
+}
+
+@media (min-width: 610px){
+    .centerLogo h1{
+        font-size: 9em;
+    }
+    .centerLogo h4{
+        font-size: 7em;
+    }
+    .centerLogo h2{
+        font-size: 8em;
+    }
+    .createBtn{
+        font-size: 3em;
+    }
+}
+
+

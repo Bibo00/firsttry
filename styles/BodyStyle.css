@@ -1,0 +1,27 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(23, 24, 24);
+    background-size: cover;
+    background-position: center;
+}
+
+.tot{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: fit-content;
+}

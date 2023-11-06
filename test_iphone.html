@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-widht,initial-scale-1.0">
+        <title>primo Login</title>
+        <style>
+
+            @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+            }
+
+
+
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 20px 100px;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 99;
+            }
+
+
+
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: rgb(23, 24, 24);
+                background-size: cover;
+                background-position: center;
+            }
+
+
+
+            .logo{
+                position: fixed;
+                transform: rotateZ(100deg);
+                left: 30px;
+                top: 5px;
+                width: 70px;
+                height: auto;
+            }
+
+
+
+            /*.navigation a::after{
+                content: '';
+                position: absolute;
+                left: 40px;
+                bottom: 0;
+                background: white;
+                border-radius: 5px;
+                width: 15%;
+                height: 3px;
+                transform: scaleX(0);
+                transition: .4s all;
+            }
+            .navigation a:hover::after{
+                transform: scaleX(1);
+            }*/
+            .navigation a{
+                margin-top: 15px;
+                margin-left: 40px;
+                font-size: 1.1em;
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+            }
+            .navigation .btnLogin{
+                margin-left: 50px;
+                border: 4px solid white;
+                padding: 10px 30px;
+                background-color: transparent;
+                border-radius: 15px;
+                color: white;
+                cursor: pointer;
+                font-size: 1em;
+                transition: .4s all;
+            }
+            .navigation .btnLogin:hover{
+                color: grey;
+                background-color: white;
+                border-color: grey;
+            }
+            .navigation{
+                position: fixed;
+                right: 30px;
+                float: left;
+                height: fit-content;
+                width: fit-content;
+            }
+
+
+
+            .checkstyle input{
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+            .checkstyle{
+                position: absolute;
+                margin-top: -40px;
+                width: 32px;
+                height: 16px;
+            }     
+            .switch{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                transition: .4s;
+            }
+            .switch:before{
+                position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: -1px;
+            bottom: -1px;
+            background-color: white;
+            transition: .4s;
+            }
+            input:checked + .switch{
+                background-color: #2196F3;
+            }
+            input:checked + .switch:before {
+                transform: translateX(18px);
+            }
+
+
+
+            .wrapper{
+                position: relative;
+                background: transparent;
+                border: 7px solid white;
+                width: 400px;
+                height: 480px;
+                border-radius: 20px;
+                backdrop-filter: blur(500px);
+                box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .form-box h2{
+                position: relative;
+                font-size: 2.7em;
+                font-family: 'Poppins', sans-serif;
+                top: -10px;
+                color:white;
+                text-align: center;
+            }
+            .inputcred{
+                position: relative;
+                width: 300px;
+                margin-bottom: 50px;
+                border-bottom: 2px solid black;
+            }
+            .logbtn{
+                position: relative;
+                left: 200px;
+                top: -60px;
+                padding: 7px 15px;
+            }
+            .inputcred input{
+                position: relative;
+                top: -2px;
+                width: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+            }
+            .regbtn{
+                position: relative;
+                left: 200px;
+                top: -30px;
+                padding: 7px 15px;
+            }
+
+
+
+            .userImg{
+                position: relative;
+                width: 20px;
+                height: auto;
+                top: 2px;
+            }
+            .user-options{
+                position: relative;
+                left: 595px;
+                top: -200px;
+                height: 80px;
+                width: 125px;
+                border: 3px solid white;
+                border-radius: 20px;
+            }
+            .user-options::before{
+                content: '';
+                position: absolute;
+                width: 120px;
+                height: 2px;
+                top: 38px;
+                background: white;
+            }
+            .user-options a{
+                color: white;
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                font-size: 1.4em;
+                margin-top: 10px;
+            }
+
+
+
+            .navigation  .userBtn{
+                position: relative;
+                left: 850px;
+                border: 4px solid white;
+                padding: 10px 30px;
+                background-color: transparent;
+                border-radius: 15px;
+                color: white;
+                cursor: pointer;
+                font-size: 1em;
+                transition: .4s all;
+            }
+
+            .centerLogo{
+                text-align: center;
+                margin-top: 100px;
+                
+            }
+            .centerLogo *{
+                position: relative;
+                flex: 1;
+                color: white;
+                font-family: 'Tilt Neon', sans-serif;
+            }
+            .centerLogo h1{
+                font-size: 10em;
+            }
+            .centerLogo h4{
+                font-size: 4em;
+            }
+            .centerLogo h2{
+                font-size: 6em;
+            }
+            .createBtn{
+                border: 4px solid white;
+                padding: 23px 60px;
+                background-color: transparent;
+                border-radius: 15px;
+                color: white;
+                cursor: pointer;
+                font-size: 2.7em;
+            }
+
+
+
+
+            .container-tot {
+                display: flex;
+                margin-top: 50px;
+                margin-bottom: 300px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .checkbox-container{
+                text-align: center;
+                position: relative;
+                float: left;
+                margin: 20px;
+            }
+
+            .selection {
+                position: relative;
+                height: 90px;
+                width: 80px;
+                border: 2px solid grey;
+                border-radius: 10px;
+                transition: .3s ;
+            }
+            .selection:hover{
+                box-shadow: 0 0 50px 3px grey;
+            }
+
+            .selection:hover .checkbox-icon{
+                opacity: 1;
+            }
+            .checkbox-input:checked + .selection{
+                border-color: blue;
+                box-shadow: 0 0 50px 3px blue;
+                background-color: rgba(0, 0, 255, 0.07);
+            }
+            .icon{
+                position: absolute;
+                top: 15px;
+                left: 10px;
+                height: 60px;
+                width: auto;
+            }
+
+            .checkbox-input{
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .checkbox-icon{
+                display: flex;
+                margin: 5px;
+                height: 15px;
+                width: 15px;
+                border: 2px solid #888888;
+                border-radius: 50%;
+                transition: .5s all;
+                opacity: 0;
+            }
+            .checkbox-input:checked + .selection .checkbox-icon {
+                opacity: 1;
+                background-color: rgb(43, 104, 184);
+                
+            }
+
+            .tick{
+                position: absolute;
+                height: 7px; 
+                width: 7px;
+                top: 9px;
+                left: 9px;
+                opacity: 0;
+            }
+
+            .checkbox-input:checked + .selection .tick {
+                opacity: 1;
+            }
+
+            .checkbox-text{
+                position: relative;
+                top: 45px;
+                font-size: 10px;
+                color: white;
+                font-family: sans-serif;
+            }
+
+            .reveal{
+                transform: translateY(150px);
+                opacity: 0;
+                transition: 2s ease;
+                
+            }
+            .reveal.active{
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .porcodio{
+                justify-content: center;
+                text-align: center;
+            }
+            .custom-select {
+                display: flex;
+                position: relative;
+                font-family: Arial;
+                justify-content: center;
+                margin-top: -200px;
+                height: 400px;
+            }
+
+            .custom-select select {
+                display: none; /*hide original SELECT element: */
+            }
+
+            .select-selected {
+                position: absolute;
+                display: block;
+                background-color: rgba(0, 0, 0, 0.726);
+                width: 180px;
+                height: fit-content;
+                margin-bottom: 300px;
+            }
+
+            .border-top{
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+            }
+            .border{
+                border-radius: 10px;
+            }
+            .border-bottom{
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            /* Style the arrow inside the select element: */
+            .select-selected:after {
+                position: absolute;
+                content: "";
+                top: 14px;
+                right: 10px;
+                width: 0;
+                height: 0;
+                border: 6px solid transparent;
+                border-color: #fff transparent transparent;
+            }
+
+            /* Point the arrow upwards when the select box is open (active): */
+            .select-selected.select-arrow-active:after {
+                border-color: transparent transparent #fff transparent;
+                top: 7px;
+            }
+
+            /* style the items (options), including the selected item: */
+            .select-items div,.select-selected {
+                color: #ffffff;
+                padding: 8px 16px;
+                border: 1px solid transparent;
+                border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+                cursor: pointer;
+                width: 180px;
+            }
+
+            /* Style items (options): */
+            .select-items {
+                display:block;
+                margin-top: 35px;
+            }
+
+            .select-hide {
+                display: none;
+            }
+            .select-items div{
+                background-color: rgba(0, 0, 0, 0.726);
+                position: relative;
+            }
+            .select-items div:hover{
+                background-color: rgba(0, 0, 0, 0.826);
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div>
+                <img class="logo" src="images/icon2.png">
+            </div>
+
+            <nav class="navigation">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Help</a>
+                <button class="btnLogin" onclick="showlog()">Login</button>
+            </nav>
+                
+        </header>
+        <form action="login.php" method="post">
+            <div class="wrapper" style="display: none;" id="wrapper">
+                <div class="form-box Login">
+                    <h2>Login</h2>
+                    <div class="inputcred">
+                        <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>      
+                        <input type="text" name="uname" placeholder="username">
+                    </div>
+                    <div class="inputcred">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <input type="password" name="password" placeholder="password">
+                    </div>
+                    <div class="checkbox">
+                        <label class="checkstyle">
+                            <input type="checkbox" id="check">                            
+                            <span class="switch"></span>
+                        </label>
+                        <label for="check" style="position: relative; left: 40px; top: -40px">Remember me</label>
+                    </div>
+                    <div class="log">
+                        <button class="logbtn" type="submit">Login</button>
+                    </div>
+                    <div class="register">
+                        <p>Don't have an account?<a onclick="showreg()"> Register here</a></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <form action="registration.php" method="post">
+            <div class="wrapper" style="display: none;" id="wrapper2">
+                <div class="form-box Login">
+                    <h2>Registration</h2>
+                    <form action="#">
+                        <div class="inputcred">
+                            <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                            <input type="text" name="regname" placeholder="username">
+                        </div>
+                        <div class="inputcred">
+                            <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                            <input type="email" name="regmail" placeholder="email">
+                        </div>
+                        <div class="inputcred">
+                            <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                            <input type="password" name="regpassword" placeholder="password">
+                        </div>
+                        <div class="log">
+                            <button class="regbtn" type="submit">Submit</button>
+                        </div>
+                        <div style="position: relative;">
+                            <p>Already have an account?<a onclick="showlog()">     Log In</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </form>
+
+        <div class="porcodio">
+            <div class="centerLogo" id="centerLogo" >
+                <h1 >Create</h1><br><br>
+                <h4>your</h4><br><br>
+                <h2> workout</h2><br><br>
+                <button class="createBtn" id="crtBtn">Create</button>
+            </div>
+
+
+            <div class="container-tot reveal" id="containerEs">
+                <label class="checkbox-container">
+                    <input type="checkbox" class="checkbox-input" id="input">
+                    <div class="selection">
+                        <span class="checkbox-icon"></span>
+                        <img src="images/tick.png" class="tick" >
+                        <img src="images/chest_icon_def.png" class="icon">
+                        <span class="checkbox-text">Petto</span>
+                    </div>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" class="checkbox-input" id="input">
+                    <div class="selection">
+                        <span class="checkbox-icon"></span>
+                        <img src="images/tick.png" class="tick" >
+                        <img src="images/back_icon_def.png" class="icon">
+                        <span class="checkbox-text">Schiena</span>
+                    </div>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" class="checkbox-input" id="input">
+                    <div class="selection">
+                        <span class="checkbox-icon"></span>
+                        <img src="images/tick.png" class="tick" >
+                        <img src="images/bicep_icon_def.png" class="icon">
+                        <span class="checkbox-text">Bicipiti</span>
+                    </div>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" class="checkbox-input" id="input">
+                    <div class="selection">
+                        <span class="checkbox-icon"></span>
+                        <img src="images/tick.png" class="tick" >
+                        <img src="images/tricep_icon_def.png" class="icon">
+                        <span class="checkbox-text">Tricipiti</span>
+                    </div>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" class="checkbox-input" id="input">
+                    <div class="selection">
+                        <span class="checkbox-icon"></span>
+                        <img src="images/tick.png" class="tick">
+                        <img src="images/leg_icon_def.png" class="icon">
+                        
+                        <span class="checkbox-text">Gambe</span>
+                    </div>
+                </label>
+            </div>
+            <div class="custom-select reveal">
+                <select name='esercizi' id='esercizi'>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                    <option value="60">60</option>
+                    <option value="90">90</option>
+                    <option value="120">120</option>
+                    <option value="180">180</option>
+                </select>
+            </div>
+        </div>
+
+
+        
+        
+        <script>
+            /* Trova tutti gli elementi con la classe "custom-select": */
+            var customSelects = document.getElementsByClassName("custom-select");
+            var numCustomSelects = customSelects.length;
+
+            for (var i = 0; i < numCustomSelects; i++) {
+                var selectElement = customSelects[i].getElementsByTagName("select")[0];
+                var selectElementLength = selectElement.length;
+                
+                /* Crea un nuovo elemento DIV per rappresentare l'elemento selezionato: */
+                var selectedOption = document.createElement("DIV");
+                selectedOption.setAttribute("class", "select-selected border reveal");
+                selectedOption.innerHTML = 'seleziona tempo';
+                customSelects[i].appendChild(selectedOption);
+
+                /* Crea un nuovo elemento DIV per contenere la lista delle opzioni: */
+                var optionContainer = document.createElement("DIV");
+                optionContainer.setAttribute("class", "select-items select-hide reveal");
+
+                for (var j = 0; j < selectElementLength; j++) {
+                    /* Crea un nuovo elemento DIV per rappresentare un'opzione: */
+                    var optionElement = document.createElement("DIV");
+                    optionElement.innerHTML = selectElement.options[j].innerHTML;
+                    optionElement.setAttribute("name", selectElement.options[j].innerHTML);
+                    if(j == selectElementLength - 1){
+                        optionElement.setAttribute("class", 'border-bottom');
+                    }
+                    
+                    /* Aggiunge un gestore di eventi "click" all'opzione: */
+                    optionElement.addEventListener("click", function (event) {
+                        var select = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                        var numOptions = select.length;
+
+                        for (var k = 0; k < numOptions; k++) {
+                            if (select.options[k].innerHTML == this.innerHTML) {
+                                selectedOption.innerHTML = this.innerHTML;
+                                break;
+                            }
+                        }
+                    });
+
+                    optionContainer.appendChild(optionElement);
+                }
+                customSelects[i].appendChild(optionContainer);
+
+                /* Aggiunge un gestore di eventi "click" all'elemento selezionato: */
+                selectedOption.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                    closeAllSelect(this);
+                    this.nextSibling.classList.toggle("select-hide");
+                    this.classList.toggle("select-arrow-active");
+                    this.classList.toggle('border-top');
+                    this.classList.toggle('border');
+                });
+            }
+
+
+            function closeAllSelect(elmnt) {
+                var arrNo = [];
+                var optionsContainer = document.getElementsByClassName("select-items");
+                var selectedElmnt = document.getElementsByClassName("select-selected");
+                var optionsContainerlenght = optionsContainer.length;
+                var selectedElmntlenght = selectedElmnt.length;
+                for (var i = 0; i < selectedElmntlenght; i++) {
+                    if (elmnt == selectedElmnt[i]) {
+                        arrNo.push(i);
+                    } else {
+                        selectedElmnt[i].classList.remove("select-arrow-active");
+                        selectedElmnt[i].classList.remove("border-top");
+                        selectedElmnt[i].classList.add("border");
+                    }
+                }
+                for (var i = 0; i < optionsContainerlenght; i++) {
+                    if (arrNo.indexOf(i)) {
+                        optionsContainer[i].classList.add("select-hide");
+                    }
+                }
+            }
+            document.addEventListener("click", closeAllSelect);
+            document.getElementById('checkinput').addEventListener('change', () => {
+                var elements = document.querySelectorAll('[name="45"]');
+                var selectedElmnt = document.getElementsByClassName("select-selected");
+                var selectedElmntlenght = selectedElmnt.length;
+                for (var i = 0; i < selectedElmntlenght; i++){
+                    if(selectedElmnt[i].innerHTML <= 45){
+                        selectedElmnt[i].innerHTML = 'seleziona tempo';
+                    }
+                }
+                elements.forEach(function(elmnt) {
+                    elmnt.classList.toggle('select-hide');
+                });
+                elements = document.querySelectorAll('[name="30"]');
+                elements.forEach(function(elmnt) {
+                    elmnt.classList.toggle('select-hide');
+                });
+            })
+            var display_log_state = false;
+            var display_reg_state = false;
+            var display_option_state = false;
+            const logForm = document.getElementById("wrapper");
+            const regForm = document.getElementById("wrapper2");
+            const centerLogo = document.getElementById("centerLogo");
+
+            function showlog(){
+                if(display_log_state == false || display_reg_state == true){
+                    logForm.style.display = "flex";
+                    centerLogo.style.display = "none";
+                    regForm.style.display = "none";
+                    display_log_state = true;
+                } else {
+                    logForm.style.display = "none";
+                    centerLogo.style.display = "";
+                    regForm.style.display = "none";
+                    display_log_state = false;
+                }
+            }
+
+            function showreg(){
+                regForm.style.display = "flex";
+                logForm.style.display = "none";
+                centerLogo.style.display = "none";
+                display_reg_state = true;
+            }
+
+            function showoption(){
+                const userOption = document.getElementById("user-option");
+                if(display_option_state == false){
+                    userOption.style.display = "block";
+                    display_option_state = true;
+                } else{
+                    userOption.style.display = "none";
+                    display_option_state = false;
+                }
+            }
+            function uncheck(){
+                const checkboxes = document.querySelectorAll('input[id="input"]');
+                checkboxes.forEach((checkbox) => {
+                    checkbox.checked = false;
+                });
+            }
+            function reveal() {
+                var reveals = document.querySelectorAll(".reveal");
+
+                for (var i = 0; i < reveals.length; i++) {
+                    var windowHeight = window.innerHeight;
+                    var elementTop = reveals[0].getBoundingClientRect().top;
+                    var elementVisible = 50;
+
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveals[i].classList.add("active");
+                    } else {
+                        reveals[i].classList.remove("active");
+                        uncheck();
+                    }
+                }
+            }
+
+            window.addEventListener("scroll", reveal);
+            document.getElementById("crtBtn").addEventListener("click", function(){
+                document.getElementById('containerEs').scrollIntoView();
+                uncheck();
+            })
+
+        </script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="script8.js"></script>
+    </body>
+</html>
