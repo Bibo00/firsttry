@@ -6,12 +6,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <title>primo Login</title>
-        <link rel="stylesheet" href="styles/BodyStyle.css">
-        <link rel="stylesheet" href="styles/OptionMuscStyle.css">
-        <link rel="stylesheet" href="styles/OptionTimeStyle.css">
-        <link rel="stylesheet" href="styles/HeaderStyle.css">
-        <link rel="stylesheet" href="styles/CenterLogoStyle.css">
-        <link rel="stylesheet" href="styles/LogRegFormStyle.css">
+        <link rel="stylesheet" type="text/css" href="styles/BodyStyle.css">
+        <link rel="stylesheet" type="text/css" href="styles/OptionMuscStyle.css">
+        <link rel="stylesheet" type="text/css" href="styles/OptionTimeStyle.css">
+        <link rel="stylesheet" type="text/css" href="styles/HeaderStyle.css">
+        <link rel="stylesheet" type="text/css" href="styles/CenterLogoStyle.css">
+        <link rel="stylesheet" type="text/css" href="styles/LogRegFormStyle.css">
+        <link rel="stylesheet" type="text/css" href="styles/CreateButton.css">
         <link rel="icon" type="image/x-icon" href="images/icon.png">
     </head>
 
@@ -30,7 +31,7 @@
                 
         </header>
         <form action="login.php" method="post">
-            <div class="logspace" id="logspace">
+            <div class="logspace hide" id="logspace">
                 <div class="wrapper"  id="wrapper">
                     <div class="form-box Login">
                         <h2>Login</h2>
@@ -62,10 +63,10 @@
 
 
         <form action="registration.php" method="post">
-            <div class="logspace" id="regspace">
+            <div class="logspace hide" id="regspace">
                 <div class="wrapper">
                     <div class="form-box Login">
-                        <h2>Registration</h2>
+                        <h2>Sign Up</h2>
                         <form action="#">
                             <div class="inputcred">
                                 <span class="mail-icon"><ion-icon name="person-outline"></ion-icon></span>
@@ -98,7 +99,7 @@
                         <h1 >Create</h1><br><br>
                         <h4>your</h4><br><br>
                         <h2> workout</h2><br><br>
-                        <button class="createBtn" id="crtBtn">Create</button>
+                        
                     </div>
                 </div>
                 <div class="container-tot reveal" id="containerEs">
@@ -169,21 +170,18 @@
                         </select>
                     </div>
                 </div>
+                <div class="createSend">
+                    <button class="createBtn" id="crtBtn">Create</button>
+                </div>
             </form>
+            
             
         </div>
         
-
-        
-        
-        <script>
-            /* Trova tutti gli elementi con la classe "custom-select": */
-            
-            
-
-        </script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        <script src="script8.js"></script>
+        <script type="text/javascript" src="scripts/LogRegFormShow.js"></script>
+        <script type="text/javascript" src="scripts/ScriptReveal.js"></script>
+        <script type="text/javascript" src="scripts/TimeSelection.js"></script>
     </body>
 </html>
