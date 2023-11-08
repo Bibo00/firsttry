@@ -1,11 +1,18 @@
-.logspace{
+.hide.logspace{
+    width: 0;
+    height: 0;
     display: none;
+}
+
+.logspace{
+    display: flex;
     position: relative;
     justify-content: center;
     width: 100vw;
     height: fit-content;
     top: -80px;
     left: 0;
+    margin-bottom: 300px;
 }
 
 .wrapper{
@@ -46,7 +53,7 @@
 .inputcred{
     position: relative;
     display: flex;
-    width: 210px;
+    width: 80%;
     margin: 30px;
     border-bottom: 2px solid black;
 }
@@ -162,4 +169,36 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: none;
   -webkit-box-shadow: none;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+@media (min-width: 610px){
+    .logspace{
+        top: 120px;
+    }
+    .wrapper{
+        width: 380px;
+        height: 490px;
+    }
+    .form-box h2{
+        font-size: 3.2em;
+        top: -50px;
+    }
+    .checkbox{
+        top: 320px;
+        left: 25px;
+    }
+    .logbtn{
+        left: 260px;
+        top: 0;
+    }
+    .regbtn{
+        left: 245px;
+        top: 0;
+    }
+    .register{
+        top: 40px;
+    }
+    .register p{
+        font-size: 1.1em;
+    }
 }

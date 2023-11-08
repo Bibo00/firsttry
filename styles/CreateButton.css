@@ -1,0 +1,27 @@
+.createSend{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+}
+.createBtn{
+    display: flex;
+    justify-content: center;
+    width: 190px;
+    margin-top: 10px;
+    border: 7px solid white;
+    padding: 16px 40px;
+    background-color: transparent;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 2em;
+}
+
+@media (min-width: 610px){
+    .createBtn{
+        font-size: 3em;
+    }
+}

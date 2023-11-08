@@ -28,16 +28,7 @@
 .centerLogo h2{
     font-size: 5.5em;
 }
-.createBtn{
-    margin-top: 10px;
-    border: 7px solid white;
-    padding: 16px 40px;
-    background-color: transparent;
-    border-radius: 30px;
-    color: white;
-    cursor: pointer;
-    font-size: 2em;
-}
+
 
 @media (min-width: 610px){
     .centerLogo h1{
@@ -48,9 +39,6 @@
     }
     .centerLogo h2{
         font-size: 8em;
-    }
-    .createBtn{
-        font-size: 3em;
     }
 }
 

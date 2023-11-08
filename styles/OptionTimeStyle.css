@@ -4,7 +4,7 @@
 .tempo{
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: 300px;
     align-items: center;
     margin-top: 70px;
 }
@@ -84,5 +84,14 @@
         height: 50px;
         width: 280px;
         font-size: 1.5em;
+    }
+    .select-selected:after{
+        content: "";
+        top: 20px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 9px solid transparent;
+        border-color: #fff transparent transparent;
     }
 }
